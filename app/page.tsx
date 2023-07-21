@@ -177,23 +177,7 @@ export default function Home() {
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
                   <div className="font-bold text-2xl align-middle mb-2">
-                    💻 Medical Administration System v2 [Use PHP Framework Yii
-                    2]
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>Create System like V1 with additional of feature</li>
-                    <li>Create Integration EDC Service Using NodeJS</li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
-                    💻 Medical Administration System v2 [Use PHP Framework Yii
-                    2]
+                    💻 Medical Administration System v2 <span className="text-sm">[Use PHP Framework Yii 2]</span>
                   </div>
                   <ul className="list-inside list-disc">
                     <li>Create System like V1 with additional of feature</li>
@@ -233,7 +217,8 @@ export default function Home() {
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
                   <div className="font-bold text-2xl align-middle mb-2">
-                    💻 MP Core
+                    💻 MP Core <span className="text-xs">An application that contains many modules to meet the needs 
+of the company:</span>
                   </div>
                   <ul className="list-inside list-disc">
                     <li>
