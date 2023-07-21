@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-      <div className="mt-10">
+      <div className="mt-10 p-10">
         <div className="bg-white rounded-2xl relative isolate px-6 pt-14 lg:px-8">
           <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -58,11 +58,13 @@ export default function Home() {
               src="/DSC_2293.webp"
               alt="myImage"
               className="ax-w-sm mr-7 rounded-lg shadow-2xl h-[20rem] dark:invert"
-              width={300}
-              height={24}
+              width={150}
+              height={50}
+              // style={{ width: "auto", height: "auto" }}
+
               priority
             />
-            <div>
+            <div className="p-8">
               <h1 className="text-5xl font-bold text-blue-600">👦🏻 About Me</h1>
               <p className="py-6 text-justify">
                 I am a seasoned system engineer with experience in designing,
