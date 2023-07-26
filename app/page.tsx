@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-      <div className="mt-10 p-10">
+      <div className="mt-10 p-5 md:p-10">
         <div className="bg-white rounded-2xl relative isolate px-6 pt-14 lg:px-8">
           <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -25,12 +25,12 @@ export default function Home() {
               </div>
             </div>
             <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
                 Haris Lukman Hakim
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <p className="mt-4 text-sm md:text-base lg:text-lg leading-7 text-gray-600">
                 A full stack software developer, PHP Programmer (Laravel, Yii,
-                Codeigniter , Etc), Fundamental Node JS Developer, SQL Server,
+                Codeigniter, Etc), Fundamental Node JS Developer, SQL Server,
                 Odoo ERP Developer
               </p>
             </div>
@@ -49,19 +49,13 @@ export default function Home() {
           </div>
         </div>
         <div className="hero min-h-full bg-white rounded-2xl mt-7">
-          <div className="hero-content flex-col lg:flex-row-reverse">
-            {/* <img
-                src="/DSC_2293.webp"
-                className="max-w-sm mr-7 rounded-lg shadow-2xl h-[20rem]"
-              /> */}
+          <div className="hero-content flex-col md:flex-row-reverse">
             <Image
               src="/DSC_2293.webp"
               alt="myImage"
-              className="ax-w-sm mr-7 rounded-lg shadow-2xl h-[20rem] dark:invert"
+              className="md:w-96 md:h-80 mr-7 rounded-lg shadow-2xl h-[20rem] dark:invert"
               width={150}
               height={50}
-              // style={{ width: "auto", height: "auto" }}
-
               priority
             />
             <div className="p-8">
@@ -116,7 +110,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="card w-96 h-80 bg-base-100 shadow-2xl">
+            <div className="card w-full md:w-96 h-80 bg-base-100 shadow-2xl">
               <figure className="px-10 pt-10">
                 <Image
                   src="/ptcs.png"
@@ -149,7 +143,7 @@ export default function Home() {
             <ul className="bg-white rounded-2xl container mx-auto divide-y divide-gray-400 divide-dotted">
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
+                <div className="font-bold text-lg md:text-xl align-middle mb-2">
                     💻 Medical Administration System
                   </div>
                   <ul className="list-inside list-disc">
@@ -178,8 +172,9 @@ export default function Home() {
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
-                    💻 Medical Administration System v2 <span className="text-sm">[Use PHP Framework Yii 2]</span>
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
+                    💻 Medical Administration System v2{" "}
+                    <span className="text-sm">[Use PHP Framework Yii 2]</span>
                   </div>
                   <ul className="list-inside list-disc">
                     <li>Create System like V1 with additional of feature</li>
@@ -192,7 +187,7 @@ export default function Home() {
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
                     💻 File Receipt System
                   </div>
                   <ul className="list-inside list-disc">
@@ -205,7 +200,7 @@ export default function Home() {
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
                     💻 Medical Assistance
                   </div>
                   <ul className="list-inside list-disc">
@@ -218,9 +213,12 @@ export default function Home() {
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
-                    💻 MP Core <span className="text-xs">An application that contains many modules to meet the needs 
-of the company:</span>
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
+                    💻 MP Core{" "}
+                    <span className="text-xs">
+                      An application that contains many modules to meet the
+                      needs of the company:
+                    </span>
                   </div>
                   <ul className="list-inside list-disc">
                     <li>
@@ -247,7 +245,7 @@ of the company:</span>
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
                     💻 Covid 19 Application
                   </div>
                   <ul className="list-inside list-disc">
@@ -261,7 +259,7 @@ of the company:</span>
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
                     💻 Dashboard Monitoring SAP
                   </div>
                   <ul className="list-inside list-disc">
@@ -274,7 +272,7 @@ of the company:</span>
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
                     💻 HRIS System
                   </div>
                   <ul className="list-inside list-disc">
@@ -289,7 +287,7 @@ of the company:</span>
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
                     💻 DO Tracking (Using Odoo)
                   </div>
                   <ul className="list-inside list-disc">
@@ -302,7 +300,7 @@ of the company:</span>
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
                     💻 FilesSharing for External user Pertamina PHONWJ
                   </div>
                   <ul className="list-inside list-disc">
@@ -318,7 +316,7 @@ of the company:</span>
               </li>
               <li className="flex items-center justify-between px-4 py-2">
                 <div className="antialiased">
-                  <div className="font-bold text-2xl align-middle mb-2">
+                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
                     💻 Contract Management
                   </div>
                   <ul className="list-inside list-disc">
