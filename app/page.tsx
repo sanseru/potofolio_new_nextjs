@@ -239,6 +239,26 @@ export default function Home() {
                 high-quality software products
               </p>
             </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <Image
+                src="/freenlancer.png" // Update this to your freelance project image path
+                alt="Freelance Medical Check-Up Application"
+                className="w-full h-32 object-contain mb-4"
+                width={200}
+                height={128}
+                priority
+              />
+              <h3 className="text-xl font-semibold mb-2">
+                Freelance
+              </h3>
+              <p className="text-gray-600">
+                Developed a comprehensive medical check-up application,
+                including a mobile app using React. Created a dashboard for
+                managing Medical Check-Up (MCU) data and other related
+                functionalities, ensuring a user-friendly experience for both
+                patients and healthcare providers.
+              </p>
+            </div>
           </div>
         </div>
       </section>
