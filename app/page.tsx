@@ -76,7 +76,8 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
-            >
+              aria-label="View my GitHub profile"
+              >
               <Github size={28} />
             </a>
             <a
@@ -84,12 +85,16 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
+              aria-label="Connect with me on LinkedIn"
+
             >
               <Linkedin size={28} />
             </a>
             <a
               href="mailto:lukmanhakim1805@gmail.com"
               className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
+              rel="noopener noreferrer"
+              aria-label="Send me an email"
             >
               <Mail size={28} />
             </a>
@@ -292,12 +297,16 @@ export default function Home() {
             <a
               href="https://github.com/sanseru"
               className="hover:text-blue-300 transition duration-300"
+              aria-label="View my GitHub profile"
+
             >
               <Github size={24} />
             </a>
             <a
               href="https://linkedin.com/in/harislkmn"
               className="hover:text-blue-300 transition duration-300"
+              aria-label="Connect with me on LinkedIn"
+
             >
               <Linkedin size={24} />
             </a>
