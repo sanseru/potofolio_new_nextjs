@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function page() {
   return (
     <div className="bg-gray-400 min-h-screen">
@@ -10,9 +12,11 @@ export default function page() {
         <div className="grid grid-col-1 ml-1 sm:ml-4 sm:grid-cols-3 gap-4  sm:justify-items-center">
           <div className="card w-80 sm:w-96 bg-base-100 shadow-xl sm:mr-4 hover:bg-slate-200">
             <figure className="px-10 pt-10">
-              <img
-                src=""
-                alt="Cars"
+              <Image
+                src="/mp.png"
+                alt="Car image"
+                width={200}
+                height={200}
                 className="rounded-xl"
               />
             </figure>
