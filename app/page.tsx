@@ -114,9 +114,9 @@ export default function Home() {
             </div>
             <div className="lg:w-2/3 lg:pl-12 leading-loose">
               <p className="text-lg mb-6 leading-relaxed  text-gray-700">
-              I&apos;sm Haris Lukman Hakim, a dedicated Full Stack Developer with over 5 years of experience
+              I&apos;m Haris Lukman Hakim, a dedicated Full Stack Developer with over 5 years of experience
           building high-performance web applications. My journey spans across industries,
-          where I&apos;sve developed scalable solutions using PHP, Laravel, Node.js, and ERP systems.
+          where I&apos;ve developed scalable solutions using PHP, Laravel, Node.js, and ERP systems.
           From modern medical administration platforms to warehouse management systems,
           I bring a versatile and solution-oriented mindset to every project.
               </p>
@@ -137,11 +137,11 @@ export default function Home() {
               <FeatureItem
                 icon={<Book size={24} className="text-green-500" />}
                 title="Continuous Learning"
-                description="Committed to staying ahead of technology trends, I&apos;sm constantly expanding my knowledge in microservices architecture,
+                description="Committed to staying ahead of technology trends, I&apos;m constantly expanding my knowledge in microservices architecture,
           cloud computing, and automation technologies. This continuous learning fuels my ability to innovate and adapt in fast-evolving environments."
               />
               <p className="text-lg mt-8 font-semibold text-gray-800">
-              If you&apos;sre looking for a forward-thinking developer who combines strong technical skills
+              If you&apos;re looking for a forward-thinking developer who combines strong technical skills
               with a passion for innovation, I would be excited to collaborate and help drive your project to success.
               </p>
             </div>
