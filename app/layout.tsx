@@ -6,10 +6,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Haris Lukman Hakim',
-  description: 'Personal Website Haris Lukman Hakim',
+  description: 'Haris Lukman Portofolio Site',
   openGraph: {
     title: 'Haris Lukman Hakim',
-    description: 'A brief description of your personal website.',
+    description: 'Haris Lukman Portofolio Site',
     url: 'https://harislukman.my.id', // Replace with your URL
     siteName: 'Haris Lukman Hakim',
     images: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: 'https://harislukman.my.id/Header.webp', // Replace with your image URL
         width: 1200, // Optional: Specify the width of the image
         height: 630, // Optional: Specify the height of the image
-        alt: 'Description of the image', // Replace with your image description
+        alt: 'header Image', // Replace with your image description
       },
     ],
     type: 'website', // or 'article', 'video.movie', etc. depending on your content
@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Haris Lukman Hakim',
-    description: 'A brief description of your personal website.',
+    description: 'Haris Lukman Portofolio Site',
     images: [
       {
         url: 'https://harislukman.my.id/Header.webp', // Replace with your image URL
-        alt: 'Description of the image',
+        alt: 'header Image',
       },
     ],
   },
