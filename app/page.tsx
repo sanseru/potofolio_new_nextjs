@@ -1,339 +1,267 @@
+"use client"; // This is a client component 👈🏽
+
+import React, { ReactElement, useState } from "react";
 import Image from "next/image";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Book,
+  Code,
+  Zap,
+  ChevronDown,
+} from "lucide-react";
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  company: string;
+}
+
+interface FeatureItems {
+  title: string;
+  description: string;
+  icon: ReactElement;
+}
+
+const FeatureItem: React.FC<FeatureItems> = ({ icon, title, description }) => (
+  <div className="flex items-start mb-6">
+    <div className="mr-4">{icon}</div>
+    <div>
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-gray-600">{description}</p>
+    </div>
+  </div>
+);
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  description,
+  company,
+}) => (
+  <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <p className="text-gray-600 mb-4">{description}</p>
+    <span className="text-sm font-semibold bg-blue-100 text-blue-800 py-1 px-2 rounded">
+      {company}
+    </span>
+  </div>
+);
 
 export default function Home() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
-    <main className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-      <div className="mt-10 p-5 md:p-10">
-        <div className="bg-white rounded-2xl relative isolate px-6 pt-14 lg:px-8">
-          <div
-            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-            aria-hidden="true"
-          >
-            <div
-              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-              style={{
-                clipPath:
-                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-              }}
-            ></div>
+    <main className="min-h-screen bg-gray-100">
+      <header className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div className="container mx-auto px-6 py-16 flex flex-col items-center justify-center space-y-8">
+          <div className="text-center">
+            <h1 className="text-5xl font-extrabold mb-4 tracking-tight">
+              Haris Lukman Hakim
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-200 mb-6">
+              Full Stack Software Developer
+            </p>
+            <p className="text-md max-w-2xl mx-auto leading-relaxed">
+            Experienced Full Stack Developer with 5+ years of expertise in building scalable web applications using PHP, Laravel, Node.js, and ERP systems. Skilled in .NET, Flutter, React Native, SCADA HMI, OPC DA, HDA, and UA. Continuously learning and applying cutting-edge technologies to deliver impactful solutions.            </p>
           </div>
-          <div className="mx-auto max-w-7xl py-6 sm:py-5 lg:py-1">
-            {/* hidden sm:mb-8 sm:flex sm:justify-center */}
-            <div className="mb-8 flex justify-center">
-              <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-blue-600 ring-1 ring-blue-300 hover:ring-blue-600">
-                Hey There 👋 I am.
+          <div className="flex justify-center space-x-6">
+            <a
+              href="https://github.com/sanseru"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
+            >
+              <Github size={28} />
+            </a>
+            <a
+              href="https://linkedin.com/in/harislkmn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
+            >
+              <Linkedin size={28} />
+            </a>
+            <a
+              href="mailto:lukmanhakim1805@gmail.com"
+              className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
+            >
+              <Mail size={28} />
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">About Me</h2>
+          <div className="flex flex-col lg:flex-row items-center lg:items-start">
+            <div className="lg:w-1/3 mb-8 lg:mb-0">
+              <Image
+                src="/DSC_2293.webp"
+                alt="Haris Lukman Hakim"
+                className="rounded-lg shadow-lg object-contain mx-auto"
+                width={256}
+                height={256}
+                priority
+              />
+              <div className="mt-6 text-center">
+                <h3 className="text-2xl font-semibold mb-2">
+                  Haris Lukman Hakim
+                </h3>
+                <p className="text-gray-600">Full Stack Developer</p>
               </div>
             </div>
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                Haris Lukman Hakim
-              </h1>
-              <p className="mt-4 text-sm md:text-base lg:text-lg leading-7 text-gray-600">
-                A full stack software developer, PHP Programmer (Laravel, Yii,
-                Codeigniter, Etc), Fundamental Node JS Developer, SQL Server,
-                Odoo ERP Developer
+            <div className="lg:w-2/3 lg:pl-12 leading-loose">
+              <p className="text-lg mb-6 leading-relaxed  text-gray-700">
+              I'm Haris Lukman Hakim, a dedicated Full Stack Developer with over 5 years of experience 
+          building high-performance web applications. My journey spans across industries, 
+          where I've developed scalable solutions using PHP, Laravel, Node.js, and ERP systems. 
+          From modern medical administration platforms to warehouse management systems, 
+          I bring a versatile and solution-oriented mindset to every project.
+              </p>
+              <FeatureItem
+                icon={<Code size={24} className="text-blue-500" />}
+                title="Technical Expertise"
+                description="My technical proficiency spans backend development in .NET, PHP, and Node.js, 
+          frontend frameworks like React Native and Flutter, and industrial technologies including SCADA, 
+          OPC DA, HDA, and UA. This broad expertise enables me to solve complex problems with efficient, scalable solutions."
+              />
+              <FeatureItem
+                icon={<Zap size={24} className="text-yellow-500" />}
+                title="Problem-Solving Skills"
+                description="I have a sharp analytical approach to troubleshooting and performance optimization. 
+          Tackling system challenges from multiple angles, I ensure mission-critical applications run smoothly 
+          and reliably under pressure."
+              />
+              <FeatureItem
+                icon={<Book size={24} className="text-green-500" />}
+                title="Continuous Learning"
+                description="Committed to staying ahead of technology trends, I’m constantly expanding my knowledge in microservices architecture, 
+          cloud computing, and automation technologies. This continuous learning fuels my ability to innovate and adapt in fast-evolving environments."
+              />
+              <p className="text-lg mt-8 font-semibold text-gray-800">
+              If you’re looking for a forward-thinking developer who combines strong technical skills 
+              with a passion for innovation, I would be excited to collaborate and help drive your project to success.
               </p>
             </div>
           </div>
-          <div
-            className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-            aria-hidden="true"
-          >
-            <div
-              className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-              style={{
-                clipPath:
-                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-              }}
-            ></div>
+        </div>
+      </section>
+
+      <section className="bg-gray-200 py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">Professional Experience</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <Image
+                src="/mp.png"
+                alt="PT. Kartika Bina Medikatama"
+                className="w-full h-32 object-contain mb-4"
+                width={200}
+                height={128}
+                priority
+              />
+              <h3 className="text-xl font-semibold mb-2">
+                PT. Kartika Bina Medikatama
+              </h3>
+              <p className="text-gray-600">
+                Led development of critical healthcare systems including MAS,
+                E-Commerce platforms, and CRM solutions. Spearheaded creation of
+                innovative HRIS, Chat Bot, and Covid-19 tracking applications.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <Image
+                src="/ptcs.png"
+                alt="PT. Control System Arena Para Nusa"
+                className="w-full h-32 object-contain mb-4"
+                width={200}
+                height={128}
+                priority
+              />
+              <h3 className="text-xl font-semibold mb-2">
+                PT. Control System Arena Para Nusa
+              </h3>
+              <p className="text-gray-600">
+                Designed and implemented cutting-edge control systems.
+                Collaborated with cross-functional teams to develop and launch
+                innovative products, optimizing performance and user experience.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="hero min-h-full bg-white rounded-2xl mt-7">
-          <div className="hero-content flex-col md:flex-row-reverse">
-            <Image
-              src="/DSC_2293.webp"
-              alt="myImage"
-              className="md:w-96 md:h-80 mr-7 rounded-lg shadow-2xl h-[20rem] dark:invert"
-              width={150}
-              height={50}
-              priority
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">Key Projects</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <ProjectCard
+              title="Medical Administration System (MAS)"
+              description="Developed a comprehensive healthcare management solution, including claims processing, EDC services, and integration with national providers."
+              company="PT. Kartika Bina Medikatama"
             />
-            <div className="p-8">
-              <h1 className="text-5xl font-bold text-blue-600">👦🏻 About Me</h1>
-              <p className="py-6 text-justify">
-                I am a seasoned system engineer with experience in designing,
-                developing, and maintaining control and monitoring systems for
-                various applications. I have extensive experience in working
-                with Modbus protocol and Emerson devices to optimize the
-                performance of the systems. I have also developed several
-                applications, including HRIS, Service Chat Bot, System Stock
-                Opname, Covid-19 App, and barcoding system for warehouse
-                management.
-              </p>
-              <p className="text-justify">
-                In addition to my technical skills, I possess excellent
-                analytical and problem-solving skills, which enable me to
-                diagnose and resolve complex technical issues. I am also a great
-                team player with effective communication skills, enabling me to
-                collaborate and work with cross-functional teams. I have a
-                proactive and flexible work style that allows me to handle
-                challenges outside of my job description.
-              </p>
-              <p className="mt-3">📧 lukmanhakim1805@gmail.com</p>
-            </div>
+            <ProjectCard
+              title="HRIS & Payroll Integration"
+              description="Created a fully integrated HRIS system with payroll functionality, streamlining HR processes and improving efficiency."
+              company="PT. Kartika Bina Medikatama"
+            />
+            <ProjectCard
+              title="Covid-19 Tracking Application"
+              description="Engineered a robust system for Covid-19 registration and result tracking, featuring seamless integration with multiple laboratories."
+              company="PT. Kartika Bina Medikatama"
+            />
+            <ProjectCard
+              title="Contract Management System"
+              description="Developed an advanced contract management solution for the FCLCS department, including budget tracking and client dashboards."
+              company="PT Control System Arena Paranusa"
+            />
           </div>
         </div>
+      </section>
 
-        <div className="bg-white min-h-full rounded-2xl mt-7 mb-10">
-          <h1 className="text-3xl mt-3 py-5 px-5 font-bold text-blue-600">
-            👨🏻‍💻 Profesional Experience
-          </h1>
-          <div className="hero-content mt-[-1.1rem] flex-row flex-wrap">
-            <div className="card w-96 h-80 bg-base-100 shadow-2xl">
-              <figure className="px-10 pt-10">
-                <Image
-                  src="/mp.png"
-                  alt="medikaplaza"
-                  className="rounded-xl dark:invert"
-                  width={400}
-                  height={0}
-                  priority
-                />
-              </figure>
-              <div className="card-body items-center text-center">
-                <h2 className="text-sm card-title">
-                  PT. kartika Bina Medikatama
-                </h2>
-                <p className="text-xs">
-                  Experienced developer in MAS, E-Commerce, CRM, POS, and more.
-                  Created HRIS, Chat Bot, Covid-19 App, and warehouse systems.{" "}
-                </p>
-              </div>
-            </div>
-            <div className="card w-full md:w-96 h-80 bg-base-100 shadow-2xl">
-              <figure className="px-10 pt-10">
-                <Image
-                  src="/ptcs.png"
-                  alt="ptcs"
-                  className="rounded-xl dark:invert"
-                  width={400}
-                  height={0}
-                  priority
-                />
-              </figure>
-              <div className="card-body items-center text-center">
-                <h2 className="text-sm card-title">
-                  PT. Control System Arena Para Nusa
-                </h2>
-                <p className="text-xs">
-                  Responsibility is to design and implement systems while
-                  collaborating with cross-functional teams to develop and
-                  launch new products and features.{" "}
-                </p>
-              </div>
-            </div>
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p>© 2024 Haris Lukman Hakim. All rights reserved.</p>
+          <p className="mt-2">
+            <a
+              href="mailto:lukmanhakim1805@gmail.com"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              lukmanhakim1805@gmail.com
+            </a>
+          </p>
+          <div className="flex justify-center space-x-6 mt-4">
+            <a
+              href="https://github.com/sanseru"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              <Github size={24} />
+            </a>
+            <a
+              href="https://linkedin.com/in/harislkmn"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              <Linkedin size={24} />
+            </a>
           </div>
         </div>
-
-        <div className="bg-white rounded-2xl mt-7 mb-10">
-          <h1 className="text-3xl mt-3 py-5 px-5 font-bold text-blue-600">
-            📈 Project Experience
-          </h1>
-          <div className="hero-content mt-[-2.3rem] flex-row flex-wrap">
-            <ul className="bg-white rounded-2xl container mx-auto divide-y divide-gray-400 divide-dotted">
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 Medical Administration System
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>Manage Claims System</li>
-                    <li>
-                      Manage EDC Service for All Provider in Indonesia user{" "}
-                    </li>
-                    <li>Medlinx Services for Integration</li>
-                    <li className="font-bold">
-                      Manage Support App Use PHP native for:
-                    </li>
-                    <ul className="list-inside list-disc ml-6">
-                      <li>Reporting For Core Claim System</li>
-                      <li>Helpline System</li>
-                      <li>Case Monitoring System</li>
-                      <li>Provider System</li>
-                      <li>Membership Upload</li>
-                      <li>Dashboard Claim User Process</li>
-                      <li>Client Dashboard Monitoring</li>
-                    </ul>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 Medical Administration System v2{" "}
-                    <span className="text-sm">[Use PHP Framework Yii 2]</span>
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>Create System like V1 with additional of feature</li>
-                    <li>Create Integration EDC Service Using NodeJS</li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 File Receipt System
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>For Data Collection</li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 Medical Assistance
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>System For Assistance Department</li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 MP Core{" "}
-                    <span className="text-xs">
-                      An application that contains many modules to meet the
-                      needs of the company:
-                    </span>
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>
-                      Warehouse Asset Management System Integration with Item
-                      SAP
-                    </li>
-                    <li>
-                      Warehouse Alat Kesehatan Asset Management System
-                      Integration with SAP system
-                    </li>
-                    <li>
-                      Stock Opname System Integration Data (View) with SAP
-                      system
-                    </li>
-                    <li>
-                      Courier Application System with Notification to WhatsApp
-                      Group
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 Covid 19 Application
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>Covid-19 registration system And Result</li>
-                    <li>Integration With Another Labo Covid-19</li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 Dashboard Monitoring SAP
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>Create custom module from SAP data</li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 HRIS System
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>
-                      HRIS system for company integration with payroll system
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 DO Tracking (Using Odoo)
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>Use Odoo for create module do tracking</li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Kartika Bina Medikatama
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 FilesSharing for External user Pertamina PHONWJ
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>
-                      Create a System for Client to Sharing file between Client.
-                      Using AWS and S3
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Control System Arena Paranusa
-                </div>
-              </li>
-              <li className="flex items-center justify-between px-4 py-2">
-                <div className="antialiased">
-                  <div className="font-bold text-lg md:text-xl align-middle mb-2">
-                    💻 Contract Management
-                  </div>
-                  <ul className="list-inside list-disc">
-                    <li>
-                      Create Contrack management for FCLCS Dept to Manage
-                      Contract and Budget from Client and Dashboard for Client
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-xs font-semibold font-mono whitespace-nowrap px-2 py-1 ml-5 rounded text-white bg-pink-500 rounded-2">
-                  🏢 PT Control System Arena Paranusa
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      </footer>
     </main>
   );
 }
+const styles = `
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+`;
