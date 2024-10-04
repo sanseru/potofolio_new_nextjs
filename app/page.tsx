@@ -10,6 +10,8 @@ import {
   Code,
   Zap,
   ChevronDown,
+  FileText,
+  X,
 } from "lucide-react";
 
 interface ProjectCardProps {
@@ -50,6 +52,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
 export default function Home() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [showCV, setShowCV] = useState(false);
+
+  const handleViewCV = () => {
+    setShowCV(true);
+  };
 
   return (
     <main className="min-h-screen bg-gray-100">
@@ -77,7 +84,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
               aria-label="View my GitHub profile"
-              >
+            >
               <Github size={28} />
             </a>
             <a
@@ -86,7 +93,6 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
               aria-label="Connect with me on LinkedIn"
-
             >
               <Linkedin size={28} />
             </a>
@@ -99,8 +105,36 @@ export default function Home() {
               <Mail size={28} />
             </a>
           </div>
+          <button
+            onClick={handleViewCV}
+            className="bg-white text-blue-600 hover:bg-blue-100 px-6 py-3 rounded-full font-semibold flex items-center mx-auto md:mx-0 transition duration-300 shadow-lg"
+          >
+            <FileText size={20} className="mr-2" />
+            View CV
+          </button>
         </div>
       </header>
+      {showCV && (
+        <div className="modal modal-open modal-overlay">
+          <div className="modal-box max-w-7xl h-[90vh] p-6 rounded-lg shadow-lg transition-transform transform-gpu">
+            {/* Larger Width and Height */}
+            <h2 className="font-bold text-xl mb-4 text-center">My CV</h2>
+            <button
+              onClick={() => setShowCV(false)}
+              className="absolute right-4 top-4 btn btn-sm btn-circle"
+            >
+              ✕
+            </button>
+            <div className="w-full h-full">
+              <iframe
+                src="/HarisLukmanHakim.pdf"
+                title="CV"
+                className="w-full h-full border-none rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -298,7 +332,6 @@ export default function Home() {
               href="https://github.com/sanseru"
               className="hover:text-blue-300 transition duration-300"
               aria-label="View my GitHub profile"
-
             >
               <Github size={24} />
             </a>
@@ -306,7 +339,6 @@ export default function Home() {
               href="https://linkedin.com/in/harislkmn"
               className="hover:text-blue-300 transition duration-300"
               aria-label="Connect with me on LinkedIn"
-
             >
               <Linkedin size={24} />
             </a>
@@ -328,5 +360,8 @@ const styles = `
 
 .animate-fade-in {
   animation: fadeIn 0.6s ease-in-out;
+}
+  .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 `;
