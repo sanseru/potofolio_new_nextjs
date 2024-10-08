@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  height: 100%; /* Ensure that html and body elements are 100% height */
+}
+body {
+  @apply bg-gradient-to-r from-blue-50 to-white; /* Light blue to white gradient */
+}
+
 .section {
   @apply p-10; /* Add padding for spacing */
 }
@@ -34,9 +41,3 @@
 .article > p > img {
   @apply w-full max-w-md mx-auto rounded-lg shadow-lg; /* Responsive and adds shadow for better visual effect */
 }
-
-/* Added hover effect */
-.article:hover {
-  @apply transform transition-transform duration-200 scale-105; /* Subtle zoom effect on hover */
-}
-
