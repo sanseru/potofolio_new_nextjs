@@ -6,16 +6,16 @@ const Article = async ({ params }: { params: { slug: string } }) => {
   const articleData = await getArticleData(params.slug)
 
   return (
-    <section className="mx-auto w-10/12 md:w-1/2  flex flex-col gap-5">
-      <div className="flex justify-between font-poppins">
-        <Link href={"/blog"} className="flex flex-row gap-1 place-items-center">
-          <ArrowLeftIcon width={20} />
-          <p>back to home</p>
+    <section className="mx-auto w-10/12 md:w-1/2 flex flex-col gap-5 p-6 bg-white rounded-lg shadow-lg"> {/* Added padding, background, rounded corners, and shadow */}
+      <div className="flex justify-between items-center font-poppins">
+        <Link href="/blog" className="flex flex-row gap-1 items-center text-blue-500 hover:underline"> {/* Hover effect for link */}
+          <ArrowLeftIcon width={20} className="text-blue-500" />
+          <p>Back to Home</p>
         </Link>
-        <p>{articleData.date.toString()}</p>
+        <p className="text-sm text-gray-500">{new Date(articleData.date).toLocaleDateString()}</p> {/* Format date */}
       </div>
       <article
-        className="article"
+        className="article text-gray-700" // Added text color for better readability
         dangerouslySetInnerHTML={{ __html: articleData.contentHtml }}
       />
     </section>

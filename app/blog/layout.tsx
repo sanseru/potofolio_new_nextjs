@@ -26,8 +26,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+       <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Blog Haris" />
+        <meta name="keywords" content="Blog, Haris, SAP, Technology, PHP, OPC, Laravel Dotnet" />
       <body
-        className={`${cormorantGaramond.variable} ${poppins.variable} bg-neutral-100 h-full `}
+        className={`${cormorantGaramond.variable} ${poppins.variable}`}
       >
         {children}
       </body>
