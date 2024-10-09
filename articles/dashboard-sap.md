@@ -1,10 +1,10 @@
 ---
 title: "Bagaimana Cara Saya Melakukan Integrasi Dengan SAP Business One"
 category: "Full Stack Programming"
-date: "09-10-2024"
+date: "01-01-2024"
 ---
-
 ![Art](/sapbusinessone.webp)
+
 # Bagaimana Cara Saya Melakukan Integrasi Dengan SAP Business One
 
 Ketika mendapatkan tugas dari direksi untuk melakukan kemudahan dalam menarik data dari SAP Business One, saya cukup tertarik dengan tantangan ini. Direksi mengatakan bahwa kesulitan untuk menarik report data dan melakukan view data dengan custom lebih mudah, karena dari aplikasinya memang cukup berat untuk di akses.

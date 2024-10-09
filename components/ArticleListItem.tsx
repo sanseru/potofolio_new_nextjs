@@ -8,20 +8,21 @@ interface Props {
 
 const ArticleItemList = ({ category, articles }: Props) => {
   return (
-    <div className="flex flex-col gap-5">
-      <h2 className="font-cormorantGaramond text-2xl uppercase">{category}</h2>
-      <div className="flex flex-col gap-2.5 font-poppins text-lg">
-        {articles.map((article, id) => (
-          <Link
-            href={`/blog/${article.id}`}
-            key={id}
-            className="text-neutral-900 hover:text-amber-700 transition duration-150"
-          >
+    <ul className="space-y-4">
+    {articles.map((article, index) => (
+      <li key={index} className="border-b border-gray-200 pb-4 last:border-b-0">
+        <Link href={`/blog/${article.id}`} className="group">
+          <h3 className="text-lg font-semibold text-primary group-hover:text-primary-focus transition-colors duration-200">
             {article.title}
-          </Link>
-        ))}
-      </div>
-    </div>
+          </h3>
+          <div className="flex items-center mt-2 text-xs text-gray-500">
+            <span className="mr-2">{article.date}</span>
+            <span className="badge badge-outline badge-sm">{category}</span>
+          </div>
+        </Link>
+      </li>
+    ))}
+  </ul>
   )
 }
 
