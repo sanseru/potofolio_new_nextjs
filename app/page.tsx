@@ -11,6 +11,7 @@ import {
   Zap,
   ChevronDown,
   FileText,
+  Newspaper,
   X,
 } from "lucide-react";
 
@@ -78,6 +79,14 @@ export default function Home() {
             </p>
           </div>
           <div className="flex justify-center space-x-6">
+          <a
+              href="/blog"
+              rel="noopener noreferrer"
+              className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
+              aria-label="View my Blog"
+            >
+              <Newspaper size={28} />
+            </a>
             <a
               href="https://github.com/sanseru"
               target="_blank"
