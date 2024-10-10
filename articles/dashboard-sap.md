@@ -29,6 +29,7 @@ Langkah pertama adalah memahami mengapa penarikan data dari SAP Business One ter
 2. **Pemilihan Alat**
    Pilih alat yang paling sesuai dengan kebutuhan perusahaan. dipilihkan dengan keahlian saya waktu itu dan dibutuhkan cepat saya mmebuatnya menggunakan Yii 2.
 3. **Pengembangan Solusi**
+   ![SubArt](/3502_SQLProfiler_TraceRunning.jpg)
    Saya menggunkana Ms SQL Profiler untuk mengetahui query apa yang digunakan untuk menarik atau menampilkan data sehingga saya bisa menggunkakannya pada aplikasi yang akan dibuat.
 4. **Testing dan Validasi**
    Lakukan pengujian untuk memastikan solusi bekerja sesuai harapan dan validasi hasilnya dengan pengguna akhir.

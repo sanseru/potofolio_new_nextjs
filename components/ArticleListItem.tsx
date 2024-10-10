@@ -8,7 +8,7 @@ interface Props {
 
 const ArticleItemList = ({ category, articles }: Props) => {
   return (
-    <ul className="space-y-4">
+    <ul className="space-y-4 font-poppins">
     {articles.map((article, index) => (
       <li key={index} className="border-b border-gray-200 pb-4 last:border-b-0">
         <Link href={`/blog/${article.id}`} className="group">

@@ -19,20 +19,18 @@ export const metadata: Metadata = {
   description: "Blog Haris",
 }
 
-export default function RootLayout({
+export default function BlogLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${cormorantGaramond.variable} ${poppins.variable}`}>
        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Blog Haris" />
         <meta name="keywords" content="Blog, Haris, SAP, Technology, PHP, OPC, Laravel Dotnet" />
-      <body
-        className={`${cormorantGaramond.variable} ${poppins.variable}`}
-      >
+        <body>
         {children}
       </body>
     </html>

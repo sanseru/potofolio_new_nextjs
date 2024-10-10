@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .section {
   @apply p-10; /* Add padding for spacing */
 }
@@ -35,4 +33,11 @@
 
 .article > p > img {
   @apply w-full max-w-md mx-auto rounded-lg shadow-lg; /* Responsive and adds shadow for better visual effect */
+}
+
+img[alt="SubArt"] {
+  width: 550px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
