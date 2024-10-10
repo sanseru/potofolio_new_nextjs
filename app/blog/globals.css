@@ -35,9 +35,13 @@
   @apply w-full max-w-md mx-auto rounded-lg shadow-lg; /* Responsive and adds shadow for better visual effect */
 }
 
-img[alt="SubArt"] {
+/* img[alt="SubArt"] {
   width: 550px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
+img[alt="Art2"] {
+  width: 900px;
+} */
