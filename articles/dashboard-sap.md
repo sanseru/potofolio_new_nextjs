@@ -1,7 +1,7 @@
 ---
 title: "Bagaimana Cara Saya Melakukan Integrasi Dengan SAP Business One"
 category: "Full Stack Programming"
-date: "01-01-2024"
+date: "10-10-2024"
 ---
 ![Art](/sapbusinessone.webp)
 

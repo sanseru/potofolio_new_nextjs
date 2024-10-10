@@ -22,7 +22,7 @@ const HomePage = () => {
             Object.keys(articles).map((category) => (
               <div key={category} className="card bg-base-100 shadow-xl">
                 <div className="card-body">
-                  <h2 className="card-title text-2xl mb-4 font-poppins">{category}</h2>
+                  <h2 className="card-title text-2xl mb-4 uppercase">{category}</h2>
                   <ArticleItemList
                     category={category}
                     articles={articles[category]}

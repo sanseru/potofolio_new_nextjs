@@ -9,12 +9,10 @@ import type { ArticleItem } from "@/types";
 import { title } from "process";
 
 const articlesDirectory = path.join(process.cwd(), "articles");
-console.log(articlesDirectory);
 const getSortedArticles = (): ArticleItem[] => {
   const fileNames = fs.readdirSync(articlesDirectory);
 
   const allArticlesData = fileNames.map((fileName) => {
-    console.log(fileName);
     const id = fileName.replace(/\.md$/, "");
 
     const fullPath = path.join(articlesDirectory, fileName);
@@ -51,7 +49,6 @@ export const getCategorisedArticles = (): Record<string, ArticleItem[]> => {
   const categoriesedArticles: Record<string, ArticleItem[]> = {};
 
   sortedArticles.forEach((article) => {
-    console.log(article.category);
     if (!categoriesedArticles[article.category]) {
       categoriesedArticles[article.category] = [];
     }
