@@ -162,7 +162,7 @@ const AllFeaturesPage: React.FC = () => {
                         className="bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700"
                         onClick={() => {
                             window.open(
-                                "https://wa.me/628575535916?text=Saya%20ingin%20bertanya%20tentang%20aplikasi%20MCU",
+                                "https://wa.me/6285775535916?text=Saya%20ingin%20bertanya%20tentang%20aplikasi%20MCU",
                                 "_blank"
                             );
                         }}

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
     ArrowRight,
     Activity,
@@ -11,18 +11,27 @@ import {
     Zap,
     CheckCircle,
     Link as LinkIcon,
+    Menu, X
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Head from 'next/head'
+import Head from "next/head";
 
 const LandingPage = () => {
+    const [isOpen, setIsOpen] = useState(false); // State untuk mengontrol dropdown
+
     return (
         <>
             <Head>
                 <title>Medical Checkup - HospitalCheckPro</title>
-                <meta name="description" content="Optimalisasi layanan medical checkup di rumah sakit dengan HospitalCheckPro." />
-                <meta name="keywords" content="medical checkup, hospital, layanan kesehatan" />
+                <meta
+                    name="description"
+                    content="Optimalisasi layanan medical checkup di rumah sakit dengan HospitalCheckPro."
+                />
+                <meta
+                    name="keywords"
+                    content="medical checkup, hospital, layanan kesehatan, "
+                />
                 <meta name="robots" content="index, follow" />
                 <link rel="canonical" href="https://harislukman.my.id/mcu" />
                 {/* Tambahkan meta tag lainnya jika diperlukan */}
@@ -31,8 +40,6 @@ const LandingPage = () => {
                 {/* Header */}
                 <header className="bg-white shadow-md">
                     <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                        {/* <h1 className="text-2xl font-bold text-blue-600">HospitalCheckPro</h1>
-           */}
                         <div className="flex items-center space-x-2">
                             <Home className="text-blue-600" />{" "}
                             {/* Tambah ikon di sebelah teks */}
@@ -40,12 +47,27 @@ const LandingPage = () => {
                                 HospitalCheckPro
                             </h1>
                         </div>
-                        <nav>
-                            <ul className="flex space-x-4">
+                        {/* Hamburger menu for mobile view */}
+                        <div className="md:hidden">
+                            <button onClick={() => setIsOpen(!isOpen)}>
+                                {isOpen ? (
+                                    <X className="text-blue-600" />
+                                ) : (
+                                    <Menu className="text-blue-600" />
+                                )}
+                            </button>
+                        </div>
+                        {/* Navigation links */}
+                        <nav
+                            className={`md:flex ${isOpen ? "block" : "hidden"
+                                } absolute md:static bg-white w-full md:w-auto top-16 left-0`}
+                        >
+                            <ul className="flex flex-col md:flex-row space-x-0 md:space-x-4 p-4 md:p-0">
                                 <li>
                                     <a
                                         href="#features"
                                         className="text-gray-600 hover:text-blue-600"
+                                        onClick={() => setIsOpen(false)} // Menutup menu saat salah satu link diklik
                                     >
                                         Fitur
                                     </a>
@@ -54,6 +76,7 @@ const LandingPage = () => {
                                     <a
                                         href="#benefits"
                                         className="text-gray-600 hover:text-blue-600"
+                                        onClick={() => setIsOpen(false)}
                                     >
                                         Manfaat
                                     </a>
@@ -62,6 +85,7 @@ const LandingPage = () => {
                                     <a
                                         href="#contact"
                                         className="text-gray-600 hover:text-blue-600"
+                                        onClick={() => setIsOpen(false)}
                                     >
                                         Kontak
                                     </a>
@@ -79,15 +103,15 @@ const LandingPage = () => {
                                 Revolusi Proses Medical Checkup di Rumah Sakit Anda
                             </h2>
                             <p className="text-xl mb-6">
-                                HospitalCheckPro: Solusi komprehensif untuk mengoptimalkan layanan
-                                medical checkup, meningkatkan efisiensi, dan memberikan perawatan
-                                terbaik bagi pasien Anda.
+                                HospitalCheckPro: Solusi komprehensif untuk mengoptimalkan
+                                layanan medical checkup, meningkatkan efisiensi, dan memberikan
+                                perawatan terbaik bagi pasien Anda.
                             </p>
                             <button
                                 className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full inline-flex items-center"
                                 onClick={() => {
                                     window.open(
-                                        "https://wa.me/628575535916?text=Saya%20ingin%20bertanya%20tentang%20aplikasi%20MCU",
+                                        "https://wa.me/6285775535916?text=Saya%20ingin%20bertanya%20tentang%20aplikasi%20MCU",
                                         "_blank"
                                     );
                                 }}
@@ -122,8 +146,8 @@ const LandingPage = () => {
                                     Manajemen Poli Terpadu
                                 </h3>
                                 <p className="text-gray-600">
-                                    Kelola semua poli dengan mudah: Umum, Mata, Gigi, Jantung, THT,
-                                    dan lainnya dalam satu sistem terintegrasi.
+                                    Kelola semua poli dengan mudah: Umum, Mata, Gigi, Jantung,
+                                    THT, dan lainnya dalam satu sistem terintegrasi.
                                 </p>
                             </div>
                             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -183,8 +207,8 @@ const LandingPage = () => {
                                         Peningkatan Akurasi
                                     </h3>
                                     <p className="text-gray-600">
-                                        Minimalisir kesalahan manusia dengan sistem input dan analisis
-                                        data yang canggih.
+                                        Minimalisir kesalahan manusia dengan sistem input dan
+                                        analisis data yang canggih.
                                     </p>
                                 </div>
                             </div>
@@ -223,9 +247,9 @@ const LandingPage = () => {
                         </h2>
                         <div className="bg-white p-8 rounded-lg shadow-lg">
                             <p className="text-gray-600 mb-4">
-                                &quot;HospitalCheckPro telah mengubah cara kami mengelola medical
-                                checkup. Efisiensi meningkat drastis, dan pasien kami sangat puas
-                                dengan layanan yang lebih cepat dan akurat.&quot;
+                                &quot;HospitalCheckPro telah mengubah cara kami mengelola
+                                medical checkup. Efisiensi meningkat drastis, dan pasien kami
+                                sangat puas dengan layanan yang lebih cepat dan akurat.&quot;
                             </p>
                             <p className="font-semibold">Novi Radius</p>
                             <p className="text-sm text-gray-500">Direktur FastMedikaCenter</p>
@@ -240,14 +264,14 @@ const LandingPage = () => {
                             Siap Meningkatkan Layanan Medical Checkup Anda?
                         </h2>
                         <p className="text-xl mb-8">
-                            Jadwalkan demo gratis sekarang dan lihat bagaimana HospitalCheckPro
-                            dapat mentransformasi rumah sakit Anda.
+                            Jadwalkan demo gratis sekarang dan lihat bagaimana
+                            HospitalCheckPro dapat mentransformasi rumah sakit Anda.
                         </p>
                         <button
                             className="bg-white text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-gray-100"
                             onClick={() => {
                                 window.open(
-                                    "https://wa.me/628575535916?text=Saya%20ingin%20bertanya%20tentang%20aplikasi%20MCU",
+                                    "https://wa.me/6285775535916?text=Saya%20ingin%20bertanya%20tentang%20aplikasi%20MCU",
                                     "_blank"
                                 );
                             }}
@@ -265,7 +289,6 @@ const LandingPage = () => {
                 </footer>
             </div>
         </>
-
     );
 };
 
