@@ -70,16 +70,19 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-blue-200 mb-6">
               Full Stack Software Developer
             </p>
-            <p className="text-md max-w-2xl mx-auto leading-relaxed">
+            <p className="text-md max-w-4xl mx-auto leading-relaxed">
               Experienced Full Stack Developer with 5+ years of expertise in
-              building scalable web applications using PHP, Laravel, Node.js,
-              and ERP systems. Skilled in .NET, Flutter, React Native, SCADA
-              HMI, OPC DA, HDA, and UA. Continuously learning and applying
-              cutting-edge technologies to deliver impactful solutions.{" "}
+              building scalable web apps using PHP, Python, C#, and JavaScript,
+              and frameworks like Laravel, Node.js, .NET, Next.js, and Odoo.
+              Skilled in mobile development (Flutter, React Native), ERP
+              integration, SCADA systems, and proficient in server management,
+              cloud infrastructure, and email handling. Continuously applying
+              new technologies to deliver impactful, efficient backend and
+              frontend solutions.{" "}
             </p>
           </div>
           <div className="flex justify-center space-x-6">
-          <a
+            <a
               href="/blog"
               rel="noopener noreferrer"
               className="bg-white text-blue-600 hover:bg-blue-200 p-4 rounded-full transition duration-300 shadow-lg"
@@ -178,9 +181,11 @@ export default function Home() {
               <FeatureItem
                 icon={<Code size={24} className="text-blue-500" />}
                 title="Technical Expertise"
-                description="My technical proficiency spans backend development in .NET, PHP, and Node.js,
-          frontend frameworks like React Native and Flutter, and industrial technologies including SCADA,
-          OPC DA, HDA, and UA. This broad expertise enables me to solve complex problems with efficient, scalable solutions."
+                description="My technical proficiency spans backend development in .NET, PHP, Python, 
+                and Node.js, frontend frameworks like React Native and Flutter, and industrial 
+                technologies including SCADA, OPC DA, HDA, and UA. Proficient in server management, 
+                cloud infrastructure, and email handling, this broad expertise enables me to 
+                solve complex problems with efficient, scalable solutions."
               />
               <FeatureItem
                 icon={<Zap size={24} className="text-yellow-500" />}
@@ -257,9 +262,7 @@ export default function Home() {
                 height={128}
                 priority
               />
-              <h3 className="text-xl font-semibold mb-2">
-                Freelance
-              </h3>
+              <h3 className="text-xl font-semibold mb-2">Freelance</h3>
               <p className="text-gray-600">
                 Developed a comprehensive medical check-up application,
                 including a mobile app using React. Created a dashboard for
