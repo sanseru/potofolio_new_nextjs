@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Cormorant_Garamond, Poppins } from "next/font/google"
-import "./globals.css"
+import "../globals.css"
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
@@ -26,11 +26,11 @@ export default function BlogLayout({
 }) {
   return (
     <html lang="en" className={`${cormorantGaramond.variable} ${poppins.variable}`}>
-       <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Blog Haris" />
-        <meta name="keywords" content="Blog, Haris, SAP, Technology, PHP, OPC, Laravel Dotnet" />
-        <body>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Blog Haris" />
+      <meta name="keywords" content="Blog, Haris, SAP, Technology, PHP, OPC, Laravel Dotnet" />
+      <body>
         {children}
       </body>
     </html>

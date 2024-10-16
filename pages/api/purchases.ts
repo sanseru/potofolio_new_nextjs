@@ -8,8 +8,9 @@ interface GasPurchase {
     liters: number;
     currentSpeedometer: number;
     location: string;
-    photoFileName?: string;
     date: string;
+    vehicleType: 'car' | 'motorcycle';
+
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

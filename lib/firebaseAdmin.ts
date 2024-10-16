@@ -6,8 +6,6 @@ if (!process.env.FIREBASE_SERVICE_ACCOUNT_KEY) {
 
 let serviceAccount;
 try {
-    // Cek dan log isi variabel untuk debugging
-    // console.log('FIREBASE_SERVICE_ACCOUNT_KEY:', process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
     serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
 } catch (error) {
     console.error('Error parsing FIREBASE_SERVICE_ACCOUNT_KEY:', error);
@@ -21,4 +19,6 @@ if (!admin.apps.length) {
 }
 
 const db = admin.firestore();
-export { db };
+const auth = admin.auth();
+
+export { db, auth };

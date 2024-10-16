@@ -25,3 +25,51 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* Spinner styles */
+.loader {
+  border-top-color: #3498db;
+  animation: spinner 1.5s infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.section {
+  @apply p-10; /* Add padding for spacing */
+}
+
+.article {
+  @apply flex flex-col gap-5 font-poppins text-lg tracking-wide mb-10; /* Reduced mb for better spacing */
+}
+
+.article > h1 {
+  @apply font-cormorantGaramond text-4xl text-center tracking-tight text-neutral-900; /* Consistent color */
+}
+
+.article > h2 {
+  @apply font-cormorantGaramond text-3xl tracking-tight text-neutral-800; /* Slightly darker for emphasis */
+}
+
+.article > ol,
+.article > ul {
+  @apply list-decimal flex flex-col mx-5 gap-2; /* Adjusted margins for better alignment */
+}
+
+.article > pre {
+  @apply bg-neutral-950 text-neutral-50 p-5 overflow-scroll rounded-lg shadow-md; /* Rounded and shadow for depth */
+}
+
+.article > blockquote {
+  @apply pl-5 italic border-l-2 border-neutral-600 border-opacity-40; /* Better visual distinction */
+}
+
+.article > p > img {
+  @apply w-full max-w-md mx-auto rounded-lg shadow-lg; /* Responsive and adds shadow for better visual effect */
+}
