@@ -8,7 +8,7 @@ import {
   Save,
   X,
   Clock,
-  DollarSign,
+  Banknote,
   MapPin,
 } from "lucide-react";
 
@@ -114,14 +114,14 @@ export default function CarManagement() {
   };
 
   const formatCurrency = (amount: number | undefined): string => {
-    return amount ? `${amount.toLocaleString()}` : "N/A";
+    return amount ? `RP.${amount.toLocaleString()}` : "N/A";
   };
 
   const formatDate = (dateString: string | undefined): string => {
     return dateString
-      ? new Date(dateString).toLocaleDateString("en-US", {
+      ? new Date(dateString).toLocaleDateString("id-ID", {
         year: "numeric",
-        month: "long",
+        month: "numeric",
         day: "numeric",
       })
       : "Unknown Date";
@@ -330,13 +330,13 @@ export default function CarManagement() {
                         </h4>
                         <div className="flex items-center space-x-3 text-sm text-gray-600">
                           <div className="flex items-center space-x-1">
-                            <Clock size={16} className="text-blue-500" />
+                            <Clock size={14} className="text-blue-500" />
                             <span>{formatDate(service.date)}</span>
                           </div>
                           {service.cost && (
                             <div className="flex items-center space-x-1">
-                              <DollarSign
-                                size={16}
+                              <Banknote
+                                size={14}
                                 className="text-green-500"
                               />
                               <span>{formatCurrency(service.cost)}</span>
@@ -344,9 +344,9 @@ export default function CarManagement() {
                           )}
                           {service.mileage && (
                             <div className="flex items-center space-x-1">
-                              <MapPin size={16} className="text-red-500" />
+                              <MapPin size={14} className="text-red-500" />
                               <span>
-                                {service.mileage.toLocaleString()} miles
+                                {service.mileage.toLocaleString()} Km
                               </span>
                             </div>
                           )}
