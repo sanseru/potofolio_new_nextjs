@@ -26,10 +26,6 @@ export default async function handler(
 ) {
   const { method, query } = req;
 
-  console.log("Id:", query);
-
-  console.log("Request method:", req.method);
-  console.log("Query parameters:", req.query);
   switch (method) {
     case "GET":
       try {

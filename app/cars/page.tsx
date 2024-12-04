@@ -9,8 +9,9 @@ import {
   X,
   Clock,
   Banknote,
-  MapPin,
+  MapPin, LogOut
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Service {
   id: string;
@@ -36,6 +37,8 @@ export default function CarManagement() {
   const [editingCar, setEditingCar] = useState<Partial<Car> | null>(null);
   const [newService, setNewService] = useState<Partial<Service>>({});
   const [isAddingCar, setIsAddingCar] = useState(false);
+  const [isLoadingLogout, setIsLoadingLogout] = useState(false);
+  const router = useRouter();
 
   // Fetch cars on component mount
   useEffect(() => {
@@ -127,8 +130,30 @@ export default function CarManagement() {
       : "Unknown Date";
   };
 
+  const handleLogout = async () => {
+    const confirmLogout = window.confirm("Are you sure you want to log out?");
+
+    if (confirmLogout) {
+      setIsLoadingLogout(true);
+      try {
+        const response = await fetch("/api/logout", {
+          method: "POST",
+        });
+
+        if (response.ok) {
+          router.push("/login");
+        } else {
+          console.error("Failed to log out");
+        }
+      } catch (error) {
+        console.error("Error during logout:", error);
+      } finally {
+        setIsLoadingLogout(false);
+      }
+    }
+  };
   return (
-    <div className="container mx-auto p-6 bg-gray-50 min-h-screen">
+    <div className=" mx-auto p-6 bg-gray-50 min-h-screen">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">
         Car Management System
       </h1>
@@ -367,7 +392,20 @@ export default function CarManagement() {
             )}
           </div>
         )}
+        
       </div>
+      <button
+        onClick={handleLogout}
+        className={`mt-3 mb-6 px-4 py-2 text-white font-semibold rounded-lg flex items-center justify-center ${
+          isLoadingLogout
+            ? "bg-gray-400"
+            : "bg-red-500 hover:bg-red-600 transition-colors"
+        }`}
+        disabled={isLoadingLogout}
+      >
+        <LogOut className="h-5 w-5 mr-2" />
+        <span>{isLoadingLogout ? "Logging out..." : "Logout"}</span>
+      </button>
     </div>
   );
 }

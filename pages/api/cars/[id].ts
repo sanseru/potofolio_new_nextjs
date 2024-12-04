@@ -13,10 +13,6 @@ interface Service {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method, query } = req;
   const { id } = query;
-
-  console.log("Request method:", req.method);
-  console.log("Query parameters:", query);
-
   if (!id) {
     return res.status(400).json({ message: "Car ID is required" });
   }
