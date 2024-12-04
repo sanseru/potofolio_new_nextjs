@@ -373,7 +373,7 @@ export default function GasPurchaseTracker() {
                 Monthly Expenses
               </h2>
               <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={chartData} margin={{ top: 10, right: 30, left: 10, bottom: 10 }}>
+                <BarChart data={chartData} margin={{ top: 10, right: 15, left: 10, bottom: 10 }}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="date" />
                   <YAxis />
