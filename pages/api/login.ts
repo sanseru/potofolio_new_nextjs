@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             const decodedToken = await auth.verifyIdToken(idToken);
 
             // Tentukan masa berlaku session (contoh: 5 hari)
-            const expiresIn = 60 * 60 * 24 * 5 * 1000; // 5 hari
+            const expiresIn = 60 * 60 * 24 * 1 * 1000; // 5 hari
             const sessionCookie = await auth.createSessionCookie(idToken, { expiresIn });
 
             // Set cookie HTTP-only untuk session

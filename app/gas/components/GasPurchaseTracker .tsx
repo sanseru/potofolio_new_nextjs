@@ -20,6 +20,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import { getAuth } from "firebase/auth";
 
 interface GasPurchase {
   id: string;
@@ -58,18 +59,32 @@ export default function GasPurchaseTracker() {
   }, []);
 
   const loadPurchases = async () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const token = user ? await user.getIdToken() : null;
     try {
-      const response = await fetch("/api/purchases");
-      const data = await response.json();
-      if (Array.isArray(data)) {
-        // Calculate fuel efficiency for each purchase
-        const purchasesWithEfficiency = data.map((purchase) => ({
-          ...purchase,
-          fuelEfficiency: calculateFuelEfficiency(purchase),
-        }));
-        setPurchases(purchasesWithEfficiency);
+      if (token) {
+        const response = await fetch("/api/purchases", {
+          method: "GET",
+          headers: {
+              "Authorization": `Bearer ${token}`,  // Menambahkan token di header
+              "Content-Type": "application/json",
+          },
+      });
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          // Calculate fuel efficiency for each purchase
+          const purchasesWithEfficiency = data.map((purchase) => ({
+            ...purchase,
+            fuelEfficiency: calculateFuelEfficiency(purchase),
+          }));
+          setPurchases(purchasesWithEfficiency);
+        } else {
+          console.error("Loaded purchases data is not an array:", data);
+          setPurchases([]);
+        }
       } else {
-        console.error("Loaded purchases data is not an array:", data);
+        console.error("User is not authenticated");
         setPurchases([]);
       }
     } catch (error) {
@@ -174,12 +189,15 @@ export default function GasPurchaseTracker() {
       vehicleType,
       date: new Date().toISOString(),
     };
-
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const token = user ? await user.getIdToken() : null;
     try {
       const response = await fetch("/api/purchases", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,  // Menambahkan token di header
         },
         body: JSON.stringify(newPurchase),
       });
@@ -211,6 +229,10 @@ export default function GasPurchaseTracker() {
   };
 
   const handleDelete = async (id: string) => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const token = user ? await user.getIdToken() : null;
+
     if (!confirm("Are you sure you want to delete this purchase?")) return;
     setLoading(true);
 
@@ -219,6 +241,8 @@ export default function GasPurchaseTracker() {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,  // Menambahkan token di header
+
         },
         body: JSON.stringify({ id }),
       });
@@ -373,7 +397,10 @@ export default function GasPurchaseTracker() {
                 Monthly Expenses
               </h2>
               <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={chartData} margin={{ top: 10, right: 15, left: 10, bottom: 10 }}>
+                <BarChart
+                  data={chartData}
+                  margin={{ top: 10, right: 15, left: 10, bottom: 10 }}
+                >
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="date" />
                   <YAxis />
