@@ -235,7 +235,7 @@ export default function GasPurchaseTracker() {
 
     if (!confirm("Are you sure you want to delete this purchase?")) return;
     setLoading(true);
-
+    console.log(id);
     try {
       const response = await fetch("/api/purchases", {
         method: "DELETE",

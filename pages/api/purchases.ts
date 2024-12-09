@@ -58,9 +58,10 @@ export default async function handler(
         res.status(500).json({ message: "Error saving purchase" });
       }
     } else if (req.method === "DELETE") {
+        console.log(req.body);
       try {
         const { id } = req.body;
-
+        console.log(id);
         // Delete purchase from Firestore
         await db.collection("purchases").doc(id).delete();
 
